@@ -9,13 +9,13 @@ import (
 )
 
 type mainController struct {
-	mathService IMathService
+	mathService domain.IMathService
 	config      *domain.Config
 	logger      *zap.Logger
 	engine      *gin.Engine
 }
 
-func NewMainController(mathService IMathService, logger *zap.Logger, config *domain.Config) *mainController {
+func NewMainController(mathService domain.IMathService, logger *zap.Logger, config *domain.Config) *mainController {
 	controller := &mainController{
 		mathService: mathService,
 		config:      config,
